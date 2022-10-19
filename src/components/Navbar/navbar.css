@@ -1,0 +1,35 @@
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 25px;
+}
+
+.navBrand{
+    display: inline-flex;
+    align-items: center;
+}
+
+.navBtn{
+    display: flex;
+    justify-content: space-around;
+}
+
+.navLink{
+    font-size: medium;
+    margin: 0 20px;
+    padding: 5px 10px;
+    border: none;
+    background-color: white;
+}
+
+
+
+.navLink:hover {
+    font-weight: bold;
+    font-size: large;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
