@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import "./ItemListContainer.css";
 import ItemList from '../ItemList/ItemList';
 import { useParams } from "react-router-dom";
-import { getProducts } from "../asyncMock";
-import { getProductsByCategory } from "../asyncMock";
+import { getProducts } from "../../asyncMock";
+import { getProductsByCategory } from "../../asyncMock";
 
 
 const ItemListContainer = ({greetings}) => {
@@ -40,7 +40,7 @@ const ItemListContainer = ({greetings}) => {
     if(error) {
         return <h1>Hubo un error</h1>
     }
-    
+
     return (
         <div className="ItemListContainer">
             <h1 className="greetings">{greetings}</h1>
