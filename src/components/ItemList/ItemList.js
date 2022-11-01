@@ -1,10 +1,12 @@
-import {Link} from "react-router-dom"
+import "./ItemList.css"
+import Item from "../Item/Item"
 
 const ItemList = ({products}) => {
     return (
-        <ul style={{display: 'flex', flexDirection: 'column'}}>
-            {products.map(product => <Link to={`/detail/${product.id}`} key={product.id}>{product.name}</Link>)}
-        </ul>
+        <div className='ItemList'>
+            {products.map(product =>  <Item key={product.id} {...product} />)}
+        
+        </div>
     )
 }
 

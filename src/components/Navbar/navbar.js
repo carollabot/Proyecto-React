@@ -1,7 +1,7 @@
 import "./navbar.css"
 import logo from "./Assets/logo.gif"
 import CartWidget from "../CartWidget/cartwidget"
-import { Link } from "react-router-dom"
+import { Link, NavLink  } from "react-router-dom"
 
 
 const Navbar = () => {
@@ -10,13 +10,12 @@ const Navbar = () => {
             <div className="navBrand">
                 <Link to="/">
                 <img style={{height:40}} src={logo} alt="logo"/>
-                <h1>BLACKMAMBA</h1>
                 </Link>
             </div>
             <div className="navBtn">
-                <Link to="/category/top" className="navLink">Top</Link>
-                <Link to="/category/bottom" className="navLink">Bottom</Link>
-                <Link to="/category/accesories" className="navLink">Accesories</Link>
+                <NavLink  to="/category/top" className="navLink">Top</NavLink >
+                <NavLink  to="/category/bottom" className="navLink">Bottom</NavLink >
+                <NavLink  to="/category/accesories" className="navLink">Accesories</NavLink >
             </div>
             <div>
                 <CartWidget />
