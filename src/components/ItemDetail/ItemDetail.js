@@ -1,62 +1,27 @@
 import './ItemDetail.css'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
-// import ItemCount from '../ItemCount/ItemCount'
-
-const InputCount = ({onConfirm, stock, initial= 1}) => {
-    const [count, setCount] = useState(initial)
-
-    const handleChange = (e) => {
-        if(e.target.value <= stock) {
-            setCount(e.target.value)
-        }
-    }
-
-    return (
-        <div>
-            <input type='number' onChange={handleChange} value={count}/>
-            <button onClick={() => onConfirm(count)}>Agregar al carrito</button>
-        </div>
-    )
-}
-
-const ButtonCount = ({ onConfirm, initial = 1 }) => {
-    const [count, setCount] = useState(initial)
-
-    const increment = () => {
-        // if(count < stock) {
-            setCount(count + 1)
-
-    }
-
-    const decrement = () => {
-            setCount(count - 1)
-
-    }
-
-    return (
-        <div>
-            <p>{count}</p>
-            <div >
-                <button className='btn' onClick={decrement}>-</button>
-                <button className='btn' onClick={increment}>+</button>
-                <button className='btn' onClick={() => onConfirm(count)}>Agregar al carrito</button>
-            </div>
-        </div>
-    )
-}
+import ItemCount from '../ItemCount/ItemCount'
+import { CartContext } from '../../context/CartContext'
 
 
-const ItemDetail = ({ name, img, category, info, precio, cant }) => {
-    const [inputType, setInputType] = useState('button')
+const ItemDetail = ({ id, name, img, category, info, precio, cant }) => {
+
     const [quantityToAdd, setQuantityToAdd] = useState(0)
 
+    const { addItem } = useContext(CartContext)
+    
     const handleOnAdd = (quantity) => {
         setQuantityToAdd(quantity)
+    
+        const productToAdd = {
+            id, name, precio, cant
+        }
+
+        addItem(productToAdd)
     }
 
-    const Count = inputType === 'button' ? ButtonCount : InputCount
-
+    
     return (
         <div className='container'>
             <div>
@@ -84,7 +49,7 @@ const ItemDetail = ({ name, img, category, info, precio, cant }) => {
                     <footer>
                         {
                             quantityToAdd === 0 ? (
-                                <Count onConfirm={handleOnAdd} stock={cant} />
+                                <ItemCount onAdd={handleOnAdd} stock={cant} />
                             ) : (
                                 <Link className='btn' to='/cart'>Finalizar compra</Link>
                             )
