@@ -5,14 +5,14 @@
 }
 
 .ItemImg {
-    width: 300px;
+    width: 450px;
     height: 450px;
     object-fit: cover;
     object-position: center;
 }
 
 .ItemCard {
-    width: 600px;
+    width: 700px;
     height: 320px;
     padding: 30px;
     margin: 30px;
