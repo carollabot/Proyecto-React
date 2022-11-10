@@ -13,6 +13,6 @@ Correr el proyecto con el comando:
 ## 🔨 API creada mediante firebase (https://firebase.google.com)
 
 ### Authors
-- [@carollabot]
+- @carollabot
 
 
