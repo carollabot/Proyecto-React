@@ -20,7 +20,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route path='/' element={<ItemListContainer greetings={"WELCOME TO MAMBA GANG"} />}/>
-            <Route path='/category/:categoryId' element={<ItemListContainer greetings={"Listado filtrado"}/>}/>
+            <Route path='/category/:categoryId' element={<ItemListContainer greetings={"CATEGORÍA:"}/>}/>
             <Route path='/detail/:productId' element={<ItemDetailContainer />} />  
             <Route path='/cart' element={<Cart />} />
             <Route path='/checkout' element={<Checkout />} />

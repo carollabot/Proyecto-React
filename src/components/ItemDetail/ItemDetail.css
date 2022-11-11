@@ -44,7 +44,7 @@
 }
 
 .btn{
-    padding: 10 px 15px;
+    padding: 10px 15px;
     font-size: 15px;
     background: #000000;
     text-decoration: none;
@@ -56,4 +56,9 @@
 .btn-container{
     display: flex;
     justify-content: center;
+}
+
+.controlBtn{ 
+    display: inline-flex;
+    align-items: center;
 }

@@ -9,11 +9,13 @@ const CartWidget = () => {
 
     const totalQuantity = getTotalQuantity()
 
+
     return (
         <Link to='/cart'>
             <div>
                 <img src={cart} alt="cart" style={{height:40}} />
                 {totalQuantity}
+                
             </div>
         </Link>
     )

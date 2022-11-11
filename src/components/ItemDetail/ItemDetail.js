@@ -7,7 +7,7 @@ import { NotificationContext } from '../../notification/Notification'
 
 
 const ItemDetail = ({ id, name, img, category, info, precio, cant }) => {
-
+    
     const [quantityToAdd, setQuantityToAdd] = useState(0)
 
     const { addItem } = useContext(CartContext)
@@ -22,9 +22,10 @@ const ItemDetail = ({ id, name, img, category, info, precio, cant }) => {
         }
 
         addItem(productToAdd)
-        setNotification('success', `Se agrego correctamente ${cant} ${name}`)
+        setNotification('success', `Se agrego correctamente ${quantity} ${name}`)
     }
 
+    
     
     return (
         <div className='container'>
@@ -39,15 +40,15 @@ const ItemDetail = ({ id, name, img, category, info, precio, cant }) => {
                         PRODUCTO {name}
                     </h2>
                     <p className="Info">
-                        Categoria: {category}
+                        CATEGORÍA: {category}
                     </p>
                     <section>
                         <p className="Info">
-                            DETALLE DEL PRODUCTO:
+                            DETALLE:
                             {info}
                         </p>
                         <p className="precio">
-                            Precio: ${precio}
+                            PRECIO: ${precio}
                         </p>
                     </section>           
                     <footer>
