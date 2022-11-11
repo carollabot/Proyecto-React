@@ -1,4 +1,4 @@
-
+/*
 .CartView{
     margin-top: 25px;
     display: grid;
@@ -94,4 +94,17 @@
     background-color: white;
     color: black;
     transition: 0.4s;
+}
+
+*/
+
+.btn{
+    padding: 10 px 15px;
+    font-size: 15px;
+    background: #000000;
+    text-decoration: none;
+    color: #FFFFFF;
+    margin: 0px 10px;
+    cursor: pointer;
+    outline: inherit;
 }
